@@ -1,0 +1,28 @@
+.cart{
+    position: sticky;
+    top: 0;
+    border: 3px solid lightgray;
+    margin: 0px 10px;
+    padding: 5px 0px 20px;
+}
+.cart-head{
+    text-align: center;
+}
+.cart-details{
+    margin-left: 30px;
+    padding: 0px;
+}
+.cart-details p, h3 {
+    margin: 5px;
+}
+.cart-details span{
+    display: inline-block;
+    width: 150px;
+}
+.total{
+    color: #b12704;
+}
+.center{
+    text-align: center;
+    margin-top: 15px;
+}
