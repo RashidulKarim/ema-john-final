@@ -1,0 +1,9 @@
+.shippingOption small {
+  display: block;
+  margin: 2px 40px 10px;
+  color: gray;
+}
+.shippingOption label {
+  color: blue;
+  font-weight: 700;
+}
