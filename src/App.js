@@ -1,17 +1,19 @@
-import { createContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './AuthProvider/AuthProvider';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
+import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import OrderPlace from './components/OrderPlace/OrderPlace';
+import Register from './components/Register/Register';
 import Review from './components/Review/Review';
 import Shop from './components/Shop/Shop';
-export const nameContext = createContext('')
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <nameContext.Provider value="rashed">
+    <AuthProvider>
     <div className="App">
       <BrowserRouter>
       <Header></Header>
@@ -28,8 +30,14 @@ function App() {
         <Route path='/inventory'>
         <Inventory></Inventory>
         </Route>
-        <Route path='/orderplace'>
+        <PrivateRoute path='/orderplace'>
         <OrderPlace></OrderPlace>
+        </PrivateRoute>
+        <Route path='/login'>
+        <Login></Login>
+        </Route>
+        <Route path='/register'>
+        <Register></Register>
         </Route>
         <Route path='*'>
         <NotFound></NotFound>
@@ -37,7 +45,7 @@ function App() {
       </Switch>
       </BrowserRouter>  
     </div>
-    </nameContext.Provider>
+    </AuthProvider>
   );
 }
 

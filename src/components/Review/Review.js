@@ -1,15 +1,10 @@
-import { useContext } from 'react';
 import { useHistory } from 'react-router';
-import { nameContext } from '../../App';
 import Cart from '../Cart/Cart';
 import useCart from '../hook/useCart';
 import useProduct from '../hook/useProduct';
 import ReviewProduct from '../ReviewProduct/ReviewProduct';
 
-const Review = () => {
-    const name1 = useContext(nameContext);
-    console.log(name1)
-    
+const Review = () => {    
     const [products] = useProduct();
     const [addedProduct, setAddedProduct, length] = useCart(products)
     const history = useHistory();
